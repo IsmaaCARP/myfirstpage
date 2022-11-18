@@ -1,0 +1,547 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Encode Sans, sans-serif;     
+}
+
+nav{
+    background:#012a4a;
+    height: 120px;
+    width: 100%;  
+    
+}
+.enlace{
+    position:absolute;
+    padding: 20px 50px;
+    
+}
+
+.logotipo{
+    height: 130px;
+    width: 200px;
+    
+     
+}  
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+li a.active, li a:hover{
+    opacity: 0.6;  
+}
+
+/* CONTENIDO DEL MEDIO INICIA*/
+.contenido-del-medio{
+    display: inline-block;
+    width: auto;
+    margin: auto;
+    background-color: white;
+    margin-top: 15px;
+}
+
+.contenido-del-medio img{
+    width: 550px;
+    float: left;    
+    padding:auto;
+    border-radius: 5px;    
+    margin: 40px 30px 60px 400px;    
+}
+
+.sub-title{
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.contenido-del-medio p{
+    font-size: 25px;
+    font-weight: 300;
+    color: black;
+    margin: 10px 10px 80px 10px;    
+}
+
+.button{
+    display:inline;       
+    font-weight: 100;
+    border-radius: 5px;
+    margin: 10px 10px;
+    padding: 10px 50px;
+    background-color: #012a4a;
+    color: white;
+    text-decoration: none;      
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 250px;    
+    background-color:blue;
+    background-size: cover;
+    background-position: center;
+    transition: all .1s ease-in-out;
+    background-image: url(https://www.clarin.com/img/2016/09/20/ByWIwR2tVe_1256x620.jpg);
+
+}
+.banner-content{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 15, 10, .4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.banner-content h1{
+    margin: 0%;
+    padding: 0%;
+    padding-bottom: 30px;
+    font-size: 50px;
+    text-align: center;
+}
+.banner-content a{
+    display:inline;       
+    font-weight: 100;
+    border-radius: 5px;
+    margin: 10px 10px;
+    padding: 10px 50px;
+    background-color: #012a4a;
+    color: white;
+    text-decoration: none;
+}
+/* CONTENIDO DEL MEDIO TERMINA*/
+
+/* AQUI COMIENZA EL SLIDER */
+section.galeria{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+img{
+    max-width: 100%;
+}
+.galeria h2{
+    padding: 100px;
+    font-size: 50px;
+    margin-right: 50px;
+    margin-left: 10px;
+    text-align: center;
+}  
+
+.container-all{
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.slide{
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: all 1000ms;
+    animation-name: autoplay;
+    animation-duration: 9.5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.item-slide{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 100%;
+}
+
+.pagination{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.pagination-item:hover{
+    transform: scale(2);
+}
+.pagination-item img{
+    display: inline-block;
+    max-width: none;
+    height: 100%;
+    transform: scale(1);
+    opacity: 0 ;
+    transition: 300ms;
+}
+
+.pagination-item:hover img{
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[id="1"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(0, 0, 0);
+}
+
+input[id="1"]:checked ~ .pagination .pagination-item[for="1"]{
+    background: #fff;
+}
+
+input[id="2"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% *1), 0, 0);
+}
+
+input[id="2"]:checked ~ .pagination .pagination-item[for="2"]{
+    background: #fff;
+}
+
+input[id="3"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% *2), 0, 0);
+}
+
+input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
+    background: #fff;
+}
+
+input[id="4"]:checked ~ .pagination .pagination-item[for="4"]{
+    background: #fff;
+}
+
+input[id="4"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% *3), 0, 0);
+}
+
+input[id="5"]:checked ~ .pagination .pagination-item[for="5"]{
+    background: #fff;
+}
+
+input[id="5"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% *4), 0, 0);
+}
+
+@keyframes autoplay{
+20%{
+    transform: translate3d(calc(-100% * 0) ,0, 0);
+}
+40%{
+    transform: translate3d(calc(-100% * 1) ,0, 0);
+}   
+60%{
+    transform: translate3d(calc(-100% * 2) ,0, 0);
+}
+80%{
+    transform: translate3d(calc(-100% * 3) ,0, 0);
+}
+100%{
+    transform: translate3d(calc(-100% *4) ,0, 0);
+} 
+}
+/* AQUI TERMINA EL SLIDER */
+
+
+.banner2{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    
+    background-color:blue;
+    background-size: cover;
+    background-position: center;
+    transition: all .1s ease-in-out;
+    background-image: url(../images/IMAGEN2.jpg);
+
+}
+.banner-content2{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 15, 10, .4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.banner-content2 h1{
+    margin: 0%;
+    padding: 0%;
+    padding-bottom: 30px;
+    font-size: 50px;
+    text-align: center;
+}
+.banner-content2 a{
+    display:inline;       
+    font-weight: 100;
+    border-radius: 5px;
+    margin: 10px 10px;
+    padding: 10px 50px;
+    background-color: #012a4a;
+    color: white;
+    text-decoration: none;
+}
+
+#intro-section {
+    background-color: #72c755;
+    padding-top: 8rem;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1320px;
+    
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.col {
+    width: 100%;
+}
+
+.display-2 {
+    text-transform: capitalize;
+    color:black;
+    font-size: 4.5rem;
+    font-weight: 400;
+}
+  
+.display-2--intro {
+    font-weight: 550;
+    font-size: 50px;
+    display: inline-block;
+}
+  
+.display-2--description {
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+    display: inline-block;
+}
+
+.containerbtm{
+    background-color: rgb(248, 244, 244)
+}
+.txtlg{
+    text-align: center;
+    display: inline-block;
+}
+
+.contact{
+    font-size: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+.info{
+    text-align: center;
+    font-size: 25px;
+}
+
+/** Servicios **/
+.banner3{
+    position: relative;
+    width: 100%;
+    height: 250px;    
+    background-color:blue;
+    background-size: cover;
+    background-position: center;
+    transition: all .1s ease-in-out;
+    background-image: url(../images/services2.img.jpg);
+}
+
+.banner4{
+    position: relative;
+    width: 100%;
+    height: 250px;    
+    background-color:blue;
+    background-size: cover;
+    background-position: center;
+    transition: all .1s ease-in-out;
+    background-image: url(../images/pexels-victor-freitas-2261481.jpg);
+}
+
+section .servi{
+position: relative;
+padding-left: 35px;
+}
+
+.servi .servicios img{  
+   height: 215px;
+   width: 350px;   
+   padding-left: 35px;
+}
+
+.servi .servicios p{  
+    padding: 10px 50px 20px;
+}
+
+.servi .servicios a{
+    padding-bottom: 5px;
+    
+}
+
+.servi .servicios h4{
+    padding: 10px 50px 20px;
+}
+
+.container-bg {
+    display: flex;
+    width: 100%;
+    height: auto;      
+    padding: 20px;
+    background: rgb(228, 227, 227);
+}
+
+.container-bg img{
+    border-radius: 5px;
+    float: left;
+    height: 350px;
+    width: 350px;
+}
+
+.container-bg .texto-derecha{
+    margin: 2px;
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+    margin-left: 2px;    
+}
+
+.texto-izq{
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    margin-left: 15px;
+    text-align: center;
+    
+
+}
+.mujer-derecha{
+    float: center;
+    margin-left: 350px;
+}
+
+/** formulario **/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.container-form{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+    margin-top: 90px;
+}
+.container-form h2{
+    margin-bottom: 15px;
+    font-size: 35px
+}
+.container-form p{
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.container-form a{
+    font-size: 17px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 700;
+}
+.container-form a i{
+    color: #012a4a;
+    margin-right: 10px;
+}
+.container-form form .campo, textarea{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0px;
+}
+.container-form form textarea{
+    max-width: 530px;
+    min-width: 530px;
+    min-height: 140px;
+    max-height: 150px;
+}
+.container-form .btn-enviar{
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    background: #012a4a;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.container-form .btn-enviar:hover{
+    background: #012a4a;
+}
+
+
+footer{
+    background: #012a4a;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
